@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Page</title>
+    <link rel="stylesheet" href="styles/hw02-02.css" />
+    <link rel="icon" href="images/favicon-16x16.png">
+    <meta name="description" content= "Thorns"/>
+    <meta name="keyword" content="Thorns,Cacti,Hedgehog,Porcupine,Spines">
+    <style>
+        h1 {
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 590px;
+        overflow: hidden;
+        background-color: green;
+      }
+
+      li {
+        float: left;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        color: white;
+        font-size: 20px;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        border-bottom: 3px solid rgb(65, 241, 65);
+      }
+      img{
+          width: 475px;
+          height: 350px;
+          padding-left: 22px;
+          padding-top: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Thornhub</h1>
+    <body>
+      <ul>
+        <li><a href="porcupines.html">Porcupines</a></li>
+        <li><a href="hedgehogs.html">Hedgehogs</a></li>
+        <li><a href="cacti.html">Cacti</a> </li>
+      </ul>
+    <h2>What is Your Favorite Thorny Organism?</h2>
+    <form method="post" action="https://oim-apis.herokuapp.com/form">
+      <fieldset>
+        <legend><b> Your Information:</b></legend>
+        <div>
+          <label for="name-input">Name:</label>
+          <input type="text" placeholder="Enter your name here" name="fname" />
+        </div>
+        <div>
+          <label for="name-input">Email:</label>
+          <input type="text" placeholder="Enter your email here" name="fname" />
+        </div>
+      </fieldset>
+      <fieldset id="two">
+        <legend>
+          <b> Your Choice: </b>
+        </legend>
+        <div>
+          <label for="product">Which Organism is You're Favorite?</label>
+          <select name="products" id="products">
+            <option value="Cacti">Cacti</option>
+            <option value="Hedgehog">
+              Hedgehog
+            </option>
+            <option value="Porcupine">
+              Porcupine
+            </option>
+          </select>
+        </div>
+        <div>
+          <p>What did you think of this Organism?</p>
+          <label
+            >Great
+            <input type="radio" name="Great" value="Great" />
+          </label>
+          <label
+            >Awesome
+            <input type="radio" name="Awesome" value="Awesome" />
+          </label>
+          <label
+            >Good
+            <input type="radio" name="Good" id="Good" />
+          </label>
+        </div>
+        <p>What made this organism your favorite and why:</p>
+        <textarea rows="4" cols="50" name="comment" form="usrform"> </textarea>
+        <br />
+        <input type="checkbox" name="email" value="email" checked />
+        <label for="email"> Sign me up for email updates</label>
+        <br />
+        <input type="submit" value="Submit" />
+        <input type="submit" value="Reset" />
+      </fieldset>
+    </form>
+  </body>
+</html>

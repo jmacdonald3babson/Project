@@ -15,7 +15,7 @@
       ul {
         list-style-type: none;
         margin: 0;
-        padding-left: 590px;
+        padding-left: 420px;
         overflow: hidden;
         background-color: green;
       }
@@ -42,12 +42,26 @@
       img {
         width: 475px;
         height: 350px;
-        padding-left: 22px;
-        padding-top: 3px;
+        border: 10px solid;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+
       }
       p {
         padding-left: 100px;
         padding-right: 100px;
+      }
+      p{
+        font-size: larger;
+        padding: 50px;
+        color: rgb(5, 77, 5);
+        border: 2px solid rgb(5, 66, 5);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
       }
     </style>
   </head>
@@ -57,10 +71,10 @@
       <li><a href="porcupines.html">Porcupines</a></li>
       <li><a href="hedgehogs.html">Hedgehogs</a></li>
       <li><a href="cacti.html">Cacti</a></li>
+      <li><a href="form.html">Form</a> </li>
+      <li><a href="index.html">Home</a> </li>
     </ul>
     <img src="images/porcupine.jpg" alt="Porcupines" title="porcupine" />
-    <img src="images/hedgehog.jpg" alt="Hedgehog" title="hedgehog" />
-    <img src="images/cacti.jpg" alt="Cacti" title="cacti" />
     <p>
       This page is meant to educate the world on these three thorny species. The
       porcupine is known for its long thorn like spines that are very important
@@ -72,5 +86,35 @@
 
     <p><a href="form.html">Form</a></p>
     <p><a href="sitemap.html">Sitemap</a></p>
+
+    <script>
+      const slides = [
+        "images/cacti.jpg",
+        "images/hedgehog.jpg",
+        "images/porcupine.jpg",
+        "images/cacti2.jpg",
+      ];
+      const colors = ["yellow", "red", "green", "blue"];
+      const description = ["tiger1", "tiger2", "tiger3", "tiger4"];
+      const imageTitles = [" ", " ", " ", " "]
+      let i = 0;
+
+      function slideShow() {
+        if (i == slides.length) {
+          i = 0;
+        }
+
+        const image = document.querySelector("img");
+        image.src = slides[i];
+        image.style.borderColor = colors[i]
+        i++;
+
+        setTimeout(slideShow, 1000);
+      }
+      document.querySelector("body").onload = function () {
+        slideShow();
+      };
+    </script>
   </body>
+
 </html>

@@ -15,7 +15,7 @@
       ul {
         list-style-type: none;
         margin: 0;
-        padding-left: 590px;
+        padding-left: 420px;
         overflow: hidden;
         background-color: green;
       }
@@ -37,13 +37,27 @@
       }
 
       li a:hover {
-        border-bottom: 3px solid rgb(65, 241, 65);
+        border-bottom: 3px solid rgb(33, 73, 33);
       }
       img{
           width: 475px;
           height: 350px;
-          padding-left: 22px;
           padding-top: 3px;
+          display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border: green 5px solid;
+      }
+      p{
+        font-size: larger;
+        padding: 50px;
+        color: rgb(5, 77, 5);
+        border: 2px solid rgb(5, 66, 5);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
       }
     </style>
 </head>
@@ -54,10 +68,56 @@
       <li><a href="porcupines.html">Porcupines</a></li>
       <li><a href="hedgehogs.html">Hedgehogs</a></li>
       <li><a href="cacti.html">Cacti</a> </li>
+      <li><a href="form.html">Form</a> </li>
+      <li><a href="index.html">Home</a> </li>
     </ul>
     <h1>Porcupines</h1>
-    <img src="images/download.png" alt="porcupine" title="porcupine">
+    <img 
+      src="images/download.png" 
+      alt="porcupine" 
+      title="porcupine"
+      id="porcupine">
     <p>Porcupines are large rodents with coats of sharp spines, or quills, that protect them against predation. The term covers two families of animals: the Old World porcupines of family Hystricidae, and the New World porcupines of family Erethizontidae. Both families belong to the infraorder Hystricognathi within the profoundly diverse order Rodentia and display superficially similar coats of rigid or semi-rigid quills which are modified hairs composed of keratin. Despite this, the two groups are distinct from one another and are not closely related to each other within the Hystricognathi. The largest species of porcupine is the third-largest living rodent in the world after the capybara and beaver.</p>
-    
+    <p id="result">5</p>
+    <button>Click</button>
+    <a href="index.html">Home</a>
+    <a href="form.html">Form</a>
+        <script>
+      function enlargeImage() {
+        const myImg = document.getElementById("porcupine");
+        myImg.style.width="50%"
+        myImg.style.height="50%"
+       
+        }
+      function shrinkImage(){
+        const myImg = document.getElementById("porcupine");
+        myImg.style.width="30%"
+        myImg.style.height="30%"
+
+      }
+      document.querySelector("img").addEventListener("mouseover", function () {
+        enlargeImage();
+      });
+      document.querySelector("img").addEventListener("mouseout", function () {
+        shrinkImage();
+      });
+
+      let number = 5;
+      function count (){
+      if(number>0){
+      document.querySelector("#result").innerText = number;
+      console.log(number)
+      number -= 1;
+      setTimeout(count,1000);
+      }
+      else{
+      document.querySelector("#result").innerText = "Porcupine Mating Call"
+      const audio = new Audio("media/Porcupine.mp3");
+          audio.play();
+      }}
+      document.querySelector("button").onclick = function (){
+          count();
+      }
+    </script>
 </body>
 </html>

@@ -15,7 +15,7 @@
       ul {
         list-style-type: none;
         margin: 0;
-        padding-left: 590px;
+        padding-left: 420px;
         overflow: hidden;
         background-color: green;
       }
@@ -42,8 +42,22 @@
       img{
           width: 475px;
           height: 350px;
-          padding-left: 22px;
-          padding-top: 3px;
+          display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        border: 2px rgb(9, 70, 9) solid;
+
+      }
+      p{
+        font-size: larger;
+        padding: 50px;
+        color: rgb(5, 77, 5);
+        border: 2px solid rgb(5, 66, 5);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
       }
 </style>
 </head>
@@ -54,11 +68,46 @@
       <li><a href="porcupines.html">Porcupines</a></li>
       <li><a href="hedgehogs.html">Hedgehogs</a></li>
       <li><a href="cacti.html">Cacti</a> </li>
+      <li><a href="form.html">Form</a> </li>
+      <li><a href="index.html">Home</a> </li>
     </ul>
     <h1>Hedgehogs</h1>
     <img src="images/images.jpg" alt="hedgehog" title="hedgehog">
     <p>A hedgehog is a spiny mammal of the subfamily Erinaceinae, in the eulipotyphlan family Erinaceidae. There are seventeen species of hedgehog in five genera found throughout parts of Europe, Asia, and Africa, and in New Zealand by introduction. There are no hedgehogs native to Australia and no living species native to the Americas. However, the extinct genus Amphechinus was once present in North America.
 
         Hedgehogs share distant ancestry with shrews (family Soricidae), with gymnures possibly being the intermediate link, and they have changed little over the last fifteen million years.[2] Like many of the first mammals, they have adapted to a nocturnal way of life.[3] Their spiny protection resembles that of porcupines, which are rodents, and echidnas, a type of monotreme.</p>
+
+        <div>
+          Color Scheme:
+          <button id="dark">DARK</button>
+          <button id="light">LIGHT</button>
+        </div>
+        <a href="index.html">Home</a>
+        <a href="form.html">Form</a>
+        <script>
+          function changeBackgroundColorDark() {
+            const bgColor = "black";
+            const j = document.querySelector("body");
+            const whiteFont = "white";
+            j.style.backgroundColor = bgColor;
+            j.style.color = whiteFont;
+            const heading = "Hedgehogs are Thorny";
+            const b = document.querySelector("h1")
+            b.innerText= heading
+          }
+    
+          function changeBackgroundColorLight() {
+            const bgColor = "lightgray";
+            const j = document.querySelector("body");
+            const blackFont = "black";
+            j.style.backgroundColor = bgColor;
+            j.style.color = blackFont;
+          }
+          document.getElementById("dark").onclick = changeBackgroundColorDark;
+          document.getElementById("light").onclick = changeBackgroundColorLight;
+        
+        
+        
+        </script>
 </body>
 </html>

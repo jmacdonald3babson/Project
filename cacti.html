@@ -25,7 +25,7 @@
       ul {
         list-style-type: none;
         margin: 0;
-        padding-left: 590px;
+        padding-left: 420px;
         overflow: hidden;
         background-color: green;
       }
@@ -52,8 +52,31 @@
       img{
           width: 475px;
           height: 350px;
-          padding-left: 22px;
           padding-top: 3px;
+          display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+      }
+      button{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      div{
+        text-align: center;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: large;
+      }
+      p{
+        font-size: larger;
+        padding: 50px;
+        color: rgb(5, 77, 5);
+        border: 2px solid rgb(5, 66, 5);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      h1{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
       }
 </style>
 <body>
@@ -63,8 +86,16 @@
       <li><a href="porcupines.html">Porcupines</a></li>
       <li><a href="hedgehogs.html">Hedgehogs</a></li>
       <li><a href="cacti.html">Cacti</a> </li>
+      <li><a href="form.html">Form</a> </li>
+      <li><a href="index.html">Home</a> </li>
     </ul>
     <h1>Cacti</h1>
+    <button>Cacti Counter</button>
+    
+      <div class ="center">
+        <div class="counter" id = "cacti">0</div>
+        <span>Total Number of Cacti Species Worldwide</span>
+      </div>
     <img src="images/cacti2.jpg" alt="Cacti"title="Cacti">
     <p>A cactus (plural cacti, cactuses, or less commonly, cactus) is a member of the plant family Cactaceae, a family comprising about 127 genera with some 1750 known species of the order Caryophyllales. The word cactus derives, through Latin, from the Ancient Greek word κάκτος (káktos), a name originally used by Theophrastus for a spiny plant whose identity is now not certain. Cacti occur in a wide range of shapes and sizes. Although some species live in quite humid environments, most cacti live in habitats subject to at least some drought. Many live in extremely dry environments, even being found in the Atacama Desert, one of the driest places on earth. Cacti show many adaptations to conserve water. Almost all cacti are succulents, meaning they have thickened, fleshy parts adapted to store water. Unlike many other succulents, the stem is the only part of most cacti where this vital process takes place. Most species of cacti have lost true leaves, retaining only spines, which are highly modified leaves. As well as defending against herbivores, spines help prevent water loss by reducing air flow close to the cactus and providing some shade. In the absence of leaves, enlarged stems carry out photosynthesis. Cacti are native to the Americas, ranging from Patagonia in the south to parts of western Canada in the north—except for Rhipsalis baccifera, which also grows in Africa and Sri Lanka.</p>
     <p>Cactus spines are produced from specialized structures called areoles, a kind of highly reduced branch. Areoles are an identifying feature of cacti. As well as spines, areoles give rise to flowers, which are usually tubular and multipetaled. Many cacti have short growing seasons and long dormancies, and are able to react quickly to any rainfall, helped by an extensive but relatively shallow root system that quickly absorbs any water reaching the ground surface. Cactus stems are often ribbed or fluted, which allows them to expand and contract easily for quick water absorption after rain, followed by long drought periods. Like other succulent plants, most cacti employ a special mechanism called "crassulacean acid metabolism" as part of photosynthesis. Transpiration, during which carbon dioxide enters the plant and water escapes, does not take place during the day at the same time as photosynthesis, but instead occurs at night. The plant stores the carbon dioxide it takes in as malic acid, retaining it until daylight returns, and only then using it in photosynthesis. Because transpiration takes place during the cooler, more humid night hours, water loss is significantly reduced.</p>
@@ -90,6 +121,23 @@
     
 
     </table>
+    <a href="index.html">Home</a>
+    <a href="form.html">Form</a>
+    <script>
+      let number = 0;
+      function counter(){
+        if(number<2001){
+            document.querySelector("#cacti").innerText = number;
+            console.log(number)
+            number += 25;
+            setTimeout(counter,50);
+          }else{
+          }
+      }
+      document.querySelector("button").onclick = function (){
+        counter();
+      }
+    </script>
 </body>
 
 </html>

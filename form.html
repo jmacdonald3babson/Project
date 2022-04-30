@@ -16,7 +16,7 @@
       ul {
         list-style-type: none;
         margin: 0;
-        padding-left: 590px;
+        padding-left: 420px;
         overflow: hidden;
         background-color: green;
       }
@@ -46,6 +46,17 @@
           padding-left: 22px;
           padding-top: 3px;
       }
+      form{
+        background-color: green;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      h1{
+        font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+      }
     </style>
   </head>
   <body>
@@ -55,9 +66,11 @@
         <li><a href="porcupines.html">Porcupines</a></li>
         <li><a href="hedgehogs.html">Hedgehogs</a></li>
         <li><a href="cacti.html">Cacti</a> </li>
+        <li><a href="form.html">Form</a> </li>
+        <li><a href="index.html">Home</a> </li>
       </ul>
     <h2>What is Your Favorite Thorny Organism?</h2>
-    <form method="post" action="https://oim-apis.herokuapp.com/form">
+    <form action="" method="post">
       <fieldset>
         <legend><b> Your Information:</b></legend>
         <div>
@@ -74,7 +87,7 @@
           <b> Your Choice: </b>
         </legend>
         <div>
-          <label for="product">Which Organism is You're Favorite?</label>
+          <label for="product">Which Organism is your favorite?</label>
           <select name="products" id="products">
             <option value="Cacti">Cacti</option>
             <option value="Hedgehog">
@@ -89,26 +102,45 @@
           <p>What did you think of this Organism?</p>
           <label
             >Great
-            <input type="radio" name="Great" value="Great" />
+            <input type="checkbox" name="choice" value="Great" />
           </label>
           <label
             >Awesome
-            <input type="radio" name="Awesome" value="Awesome" />
+            <input type="checkbox" name="choice" value="Awesome" />
           </label>
           <label
             >Good
-            <input type="radio" name="Good" id="Good" />
+            <input type="checkbox" name="choice" id="Good" />
           </label>
         </div>
-        <p>What made this organism your favorite and why:</p>
-        <textarea rows="4" cols="50" name="comment" form="usrform"> </textarea>
+        <label>
+          Your thoughts on the Organism: <br/>
+          <textarea name="result" id="" cols="30" rows="2" readonly></textarea>
+        </label>
+        
         <br />
         <input type="checkbox" name="email" value="email" checked />
         <label for="email"> Sign me up for email updates</label>
         <br />
-        <input type="submit" value="Submit" />
-        <input type="submit" value="Reset" />
+        <input type="button" value="Select" id="button-change"/>
+        <input type="reset" value="Clear" />
       </fieldset>
     </form>
+    
+    <script>
+      const f = document.querySelector("form");
+        
+        function displayChoice(){
+            let choices = " ";
+            for(let i = 0; i < f.choice.length; i++) {
+                if(f.choice[i].checked){
+                    choices += f.choice[i].value + "\n";
+                }
+            }
+        
+        f.result.value = choices;
+    }
+        document.getElementById("button-change").onclick = displayChoice
+    </script>
   </body>
 </html>
